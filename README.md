@@ -14,4 +14,10 @@ wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhost
 2.手动添加到【定时任务crontab】（在 系统管理→服务→计划任务 (Crontab)里），实现每天定时自动更新。
 
 自由上网dnsmasq：
+
+
 01 00 * * * wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh
+
+
+
+适用padavan小型基本hosts.可以看到更多的网页内容。 *本脚本个人学习代码体验试用，不能用于商用，此为公开源码平台，试用者自负使用相关法律问题。
