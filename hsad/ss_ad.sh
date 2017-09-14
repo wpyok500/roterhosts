@@ -86,5 +86,7 @@ if [ -f /tmp/hosts_ad.conf ]; then
 	fi
 fi
 
+#重启
+restart_dhcpd
 # 删除临时文件
 rm -f /tmp/hosts_ad.txt
