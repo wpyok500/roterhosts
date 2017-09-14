@@ -25,11 +25,11 @@ echo -e "\n"
 # 下载 HOSTS 组合规则
 echo -e "\033[41;37m 组合下载时间较长.请耐心等待……\033[0m"
 echo -e "\n"
-wget --no-check-certificate -t 30 -T 80 https://raw.githubusercontent.com/896660689/Hsfq/master/hsad -qO \
+wget --no-check-certificate -t 30 -T 80 https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsad/hsad -qO \
 /tmp/ad.conf && sleep 2 && chmod +x /tmp/ad.conf && . /tmp/ad.conf
 
 # 下载 '网络收集' HOSTS 规则
-wget --no-check-certificate -t 30 -T 80 https://raw.githubusercontent.com/896660689/Hsfq/master/hsabd -qO \
+wget --no-check-certificate -t 30 -T 80 https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsad/hsabd -qO \
 /tmp/abd.conf && sleep 2 && chmod +x /tmp/abd.conf && . /tmp/abd.conf
 sleep 2
 
