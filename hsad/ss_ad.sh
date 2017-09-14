@@ -52,7 +52,7 @@ rm -rf /tmp/hosts_ad
 
 ##############################################################
 echo " 备份 hosts规则."
-if [ !-f /etc/storage/dnsmasq/hosts ]; then
+if [ !-f /etc/storage/dnsmasq/hosts_bak ]; then
     cp /etc/storage/dnsmasq/hosts /etc/storage/dnsmasq/hosts_bak
 fi
 
