@@ -14,3 +14,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhost
 
 01 00 * * * wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsad/ss_ad.sh -O ss_ad.sh;sh ss_ad.sh;rm -r ss_ad.sh
 
+
+3.删除
+
+wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsad/del -O del.sh;sh del.sh;rm -r ss_ad.sh
