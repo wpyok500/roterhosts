@@ -1,8 +1,8 @@
 #!/bin/sh
 # Compile:by-lanse	2017-08-30
 
-route_vlan=`/sbin/ifconfig br0 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " " `
-username=`nvram get http_username`
+#route_vlan=`/sbin/ifconfig br0 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " " `
+#username=`nvram get http_username`
 CRON_FILE=/etc/storage/cron/crontabs/$username
 
 	if [ -f "/etc/storage/dnsmasq/dnsmasq.conf" ]; then
