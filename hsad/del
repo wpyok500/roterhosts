@@ -1,0 +1,34 @@
+#!/bin/sh
+# Compile:by-lanse	2017-08-30
+
+route_vlan=`/sbin/ifconfig br0 |grep "inet addr"| cut -f 2 -d ":"|cut -f 1 -d " " `
+username=`nvram get http_username`
+CRON_FILE=/etc/storage/cron/crontabs/$username
+
+	if [ -f "/etc/storage/dnsmasq/dnsmasq.conf" ]; then
+		echo -e "\e[1;31m 开始卸载启动规则 \e[0m\n"
+		sed -i '/addn-hosts/d' /etc/storage/dnsmasq/dnsmasq.conf
+	fi
+
+	if [ -f "/etc/storage/cron/crontabs/$username" ]; then
+		echo -e "\e[1;31m 删除更新计划任务 \e[0m\n" && sleep 2
+		sed -i '/hsfq_ssad/d' /etc/storage/cron/crontabs/$username
+		killall crond;/usr/sbin/crond
+	fi
+
+	if [ -d "/etc/storage/bin/hosts" ]; then
+		echo -e "\e[1;31m 删除残留文件夹以及配置 \e[0m\n" && sleep 2
+		rm -rf /etc/storage/bin/hosts
+		rm -rf /etc/storage/bin/hsfq_ssad.sh
+	fi
+
+	if [ -f "/usr/sbin/dnsmasq" ]; then
+		echo -e "\e[1;31m 重启 dnsmasq \e[0m\n"
+		restart_dhcpd && /usr/sbin/dnsmasq restart >/dev/null 2>&1
+	fi
+
+	[ -f "/tmp/hsfq_ssad.sh" ] && rm -f /tmp/hsfq_ssad.sh
+	echo -e "\e[1;34m--纯净去广告卸载完毕,返回主菜单--\e[0m\n" && sleep 3
+	sh /tmp/hsfq_install
+fi
+
