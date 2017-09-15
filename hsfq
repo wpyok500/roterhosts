@@ -20,7 +20,7 @@ sed -i "/google/d" ${TMP_FQ}
 wget --no-check-certificate -t 15 -T 50 -O- "https://raw.githubusercontent.com/googlehosts/hosts/master/hosts-files/dnsmasq.conf" \
 |sed -E -e "/# /d" -e "/\#a/d" -e "/^$/d" -e "/★/d" -e "/^#/d" -e "/^$/d" >> ${TMP_FQ3}
 
-sed -i "/tumblr/d" ${TMP_FQ}
+#sed -i "/tumblr/d" ${TMP_FQ}
 
 cat ${TMP_FQ} ${TMP_FQ2} ${TMP_FQ3} > ${FQ}
 
