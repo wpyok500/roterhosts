@@ -17,7 +17,7 @@ wget --no-check-certificate -t 15 -T 50 -O- "https://raw.githubusercontent.com/g
 
 wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/wangchunming/2017hosts/master/hosts-pc" \
 | awk '$1 ~ /^[0-9]/ {printf("address=/%s/%s\n", $2,$1)}' > ${TMP_FQ}
-sed -i "/google/d" ${TMP_FQ}
+#sed -i "/google/d" ${TMP_FQ}
 #wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/896660689/Hsfq/master/hs_pc" > ${TMP_FQ}
 
 
