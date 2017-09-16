@@ -8,7 +8,7 @@
 
 自由上网dnsmasq：
 
-wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh
+wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
 
 
 2.手动添加到【定时任务crontab】（在 系统管理→服务→计划任务 (Crontab)里），实现每天定时自动更新。
