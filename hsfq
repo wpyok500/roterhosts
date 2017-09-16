@@ -17,21 +17,24 @@ wget --no-check-certificate -t 15 -T 50 -O- "https://raw.githubusercontent.com/g
 
 wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/wangchunming/2017hosts/master/hosts-pc" \
 | awk '$1 ~ /^[0-9]/ {printf("address=/%s/%s\n", $2,$1)}' > ${TMP_FQ}
+
 #sed -i "/google/d" ${TMP_FQ}
+sed -i "/google/d" tmp/tmp_fq
 #wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/896660689/Hsfq/master/hs_pc" > ${TMP_FQ}
 
 
 #sed -i "/tumblr/d" ${TMP_FQ}
+sed -i "/tumblr/d"tmp/tmp_fq
 
-#cat ${TMP_FQ} ${TMP_FQ2} ${TMP_FQ3} > ${FQ}
+cat ${TMP_FQ} ${TMP_FQ2} ${TMP_FQ3} > ${FQ}
 
 echo -e "\033[45;37m 翻网规则下载完成 \033[0m\n"
 # 删除临时缓存
-#rm -rf ${TMP_FQ} ${TMP_FQ2} ${TMP_FQ3} >/dev/null 2>&1
+rm -rf ${TMP_FQ} ${TMP_FQ2} ${TMP_FQ3} >/dev/null 2>&1
 
-#cp /tmp/fq /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
-#sed -i "1 i## update：$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
+cp /tmp/fq /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
+sed -i "1 i## update：$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
 
-#rm -rf ${FQ} >/dev/null 2>&1
+rm -rf ${FQ} >/dev/null 2>&1
 
-#restart_dhcpd
+restart_dhcpd
