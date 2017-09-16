@@ -16,7 +16,7 @@ wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhost
 自由上网dnsmasq：
 
 
-01 00 * * * wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh
+01 00 * * * wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
 
 
 
