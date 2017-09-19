@@ -11,12 +11,18 @@ FQ=/tmp/fq
 #wget --no-check-certificate -t 15 -T 50 -O- "https://raw.githubusercontent.com/sy618/hosts/master/dnsmasq/dnsfq" \
 #|sed -E -e "/# /d" -e "/\#a/d" -e "/^$/d" -e "/★/d" -e "/^#/d" -e "/^$/d" >> ${TMP_FQ2}
 
+wget --no-check-certificate -t 15 -T 50 -O- "https://raw.githubusercontent.com/wpyok500/roterhosts/master/dnsgithub" \
+|sed -E -e "/# /d" -e "/\#a/d" -e "/^$/d" -e "/★/d" -e "/^#/d" -e "/^$/d" >> ${TMP_FQ2}
+
 wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/wangchunming/2017hosts/master/hosts-pc" \
 | awk '$1 ~ /^[0-9]/ {printf("address=/%s/%s\n", $2,$1)}' > ${TMP_FQ}
+
 #sed -i "/google/d" ${TMP_FQ}
+#sed -i "/tumblr/d" ${TMP_FQ}
+
 #wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/896660689/Hsfq/master/hs_pc" > ${TMP_FQ}
 
-#sed -i "/tumblr/d" ${TMP_FQ}
+
 
 cat ${TMP_FQ} ${TMP_FQ2} > ${FQ}
 
