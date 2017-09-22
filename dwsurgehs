@@ -1,0 +1,25 @@
+#!/bin/sh
+# Compile:by-wpyok500    2018-08-28
+# 下载surage-hosts 转为dnsmasq
+
+echo -e "\e[1;36m 下载 Fq 翻网规则 \e[0m\n"
+TMP_FQ=/tmp/tmp_fq
+FQ=/tmp/fq
+
+[ -f ${FQ} ] && rm -rf ${FQ};[ -f ${TMP_FQ} ] && rm -rf ${TMP_FQ}
+wget --no-check-certificate -t 30 -T 80 -O- "https://raw.githubusercontent.com/huanz/surge-hosts/master/ChinaNet.conf" \
+|sed -E -e "/#/d" -e "/\[/d" -e "/^loglevel/d" -e "/^dns-server/d" -e "/^DOMAIN/d" -e "/^IP-CIDR/d" -e "/^skip/d" -e "/^bypass/d" -e "/^FINAL/d" -e "/\/\//d" -e "/\(/d" -e "/\^\./d" -e "s/\=//" \
+|awk '{printf("address=/%s/%s\n", $1,$2)}' >> ${TMP_FQ}
+
+cat ${TMP_FQ} > ${FQ}
+
+echo -e "\033[45;37m 翻网规则下载完成 \033[0m\n"
+# 删除临时缓存
+rm -rf ${TMP_FQ} >/dev/null 2>&1
+
+cp /tmp/fq /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
+sed -i "1 i## update：$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
+
+rm -rf ${FQ} >/dev/null 2>&1
+
+restart_dhcpd
