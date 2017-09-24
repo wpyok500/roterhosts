@@ -21,6 +21,7 @@ echo -e "\033[45;37m 翻网规则下载完成 \033[0m\n"
 rm -rf ${TMP_FQ} >/dev/null 2>&1
 
 cp /tmp/fq /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
+
 sed -i "1 i## update：$(date "+%Y-%m-%d %H:%M:%S")" /etc/storage/dnsmasq/dnsmasq.d/dnsfq.conf
 
 rm -rf ${FQ} >/dev/null 2>&1
