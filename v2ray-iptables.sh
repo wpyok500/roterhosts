@@ -22,7 +22,7 @@ iptables -t nat -A V2RAY -d 192.0.2.0/24 -j RETURN
 iptables -t nat -A V2RAY -d 192.88.99.0/24 -j RETURN
 iptables -t nat -A V2RAY -d 192.168.0.0/16 -j RETURN
 iptables -t nat -A V2RAY -d 198.51.100.0/24 -j RETURN
-iptables -t nat -A V2RAY -d 1203.0.113.0/24 -j RETURN
+iptables -t nat -A V2RAY -d 203.0.113.0/24 -j RETURN
 iptables -t nat -A V2RAY -d 224.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 240.0.0.0/4 -j RETURN
 iptables -t nat -A V2RAY -d 255.255.255.255/32 -j RETURN
