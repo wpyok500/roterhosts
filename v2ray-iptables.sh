@@ -31,7 +31,7 @@ iptables -t nat -A V2RAY -d 255.255.255.255/32 -j RETURN
 iptables -t nat -A V2RAY -p tcp -j REDIRECT --to-ports 1099
 
 # Add any UDP rules
-ip route add local default dev lo table 100
+#ip route add local default dev lo table 100
 ip rule add fwmark 1 lookup 100
 iptables -t mangle -A V2RAY -p udp --dport 53 -j TPROXY --on-port 1099 --tproxy-mark 0x01/0x01
 iptables -t mangle -A V2RAY_MARK -p udp --dport 53 -j MARK --set-mark 1
@@ -42,5 +42,5 @@ iptables -t mangle -A PREROUTING -j V2RAY
 iptables -t mangle -A OUTPUT -j V2RAY_MARK
 
 #save iptables
-service iptables save
+#service iptables save
 #iptables-save > /etc/sysconfig/iptables
