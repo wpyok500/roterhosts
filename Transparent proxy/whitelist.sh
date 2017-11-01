@@ -20,5 +20,5 @@ rm -f chnroute.txt
 iptables -t nat -A PREROUTING -p udp --dport 53 -j RETURN
 iptables -t nat -A PREROUTING -p tcp -m set ! --match-set chnroute dst -j REDIRECT --to-port 10086
 iptables -t nat -A OUTPUT -p udp --dport 53 -j RETURN
-iptables -t nat -A OUTPUT -p tcp -d  Your proxy IP address -j RETURN
+iptables -t nat -A OUTPUT -p tcp -d  Your proxy IP addres -j RETURN
 iptables -t nat -A OUTPUT -p tcp -m set ! --match-set chnroute dst -j REDIRECT --to-port 10086
