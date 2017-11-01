@@ -10,4 +10,4 @@
 
 5、恢复iptables ipset规则：restore.sh
 
-使用这些方法前，你的路由器必须先安装dnsmasq iptables ipset模块
+#使用这些方法前，你的路由器必须先安装dnsmasq iptables ipset模块
