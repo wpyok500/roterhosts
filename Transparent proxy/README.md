@@ -2,7 +2,11 @@
 
 1、gfw黑名单模式：blacklist.sh
 
+wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
+
 2、白名单模式：whitelist.sh
+
+wget --no-check-certificate https://raw.githubusercontent.com/wpyok500/roterhosts/master/hsfq -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
 
 3、V2ray本身的透明代理方式：暂时还未搞明白
 
