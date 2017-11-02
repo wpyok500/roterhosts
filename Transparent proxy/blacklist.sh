@@ -11,7 +11,7 @@ cp gfwlist.conf /etc/storage/dnsmasq/dnsmasq.d/
 rm -f gfwlist.conf
 
 #创建gfwlist黑名单
-ipset -N gfwlist iphash
+ipset create gfwlist hash:ip maxelem 65536
 
 #使用iptables做相应的规则转发到V2ray 的10086端口
 iptables -t nat -A PREROUTING -p tcp -m set --match-set gfwlist dst -j REDIRECT --to-port 10086
