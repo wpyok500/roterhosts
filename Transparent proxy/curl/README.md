@@ -4,9 +4,9 @@
 
 curl -c - -o hsfq.sh https://raw.githubusercontent.com/wpyok500/roterhosts/master/Transparent%20proxy/curl/blacklist.sh;sh hsfq.sh;rm -f hsfq.sh
 
-2、白名单模式：whitelist.sh
+2、白名单模式：whitelist.s
 
-curl -c - https://raw.githubusercontent.com/wpyok500/roterhosts/master/Transparent%20proxycurl/whitelist.sh -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
+curl -c - -o hsfq.sh https://raw.githubusercontent.com/wpyok500/roterhosts/master/Transparent%20proxycurl/whitelist.sh;sh hsfq.sh;rm -f hsfq.sh
 
 3、V2ray本身的透明代理方式：暂时还未搞明白
 
