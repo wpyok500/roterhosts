@@ -2,7 +2,7 @@
 
 1、gfw黑名单模式：blacklist.sh
 
-curl -c - https://raw.githubusercontent.com/wpyok500/roterhosts/master/Transparent%20proxy/curl/blacklist.sh -O hsfq.sh;sh hsfq.sh;rm -f hsfq.sh
+curl -c - -o hsfq.sh https://raw.githubusercontent.com/wpyok500/roterhosts/master/Transparent%20proxy/curl/blacklist.sh;sh hsfq.sh;rm -f hsfq.sh
 
 2、白名单模式：whitelist.sh
 
